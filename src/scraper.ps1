@@ -1,46 +1,75 @@
+# Definir la URL de origen
 param (
-    [string]$url
+    [string] $url
 )
 
-# Agretga la DLL de HtmlAgilityPack al contexto de PowerShell para poder utilizarla en el script de scraping de productos de Amazon
+try {
+    # Registrar el inicio del proceso de scraping
+    Write-Host "Iniciando el proceso de scraping en $url"
 
-Add-Type -Path "C:\Users\Usuario\ATENTO_TEST\AmazonSearchApp\dll\htmlagilitypack.1.11.61\lib\netstandard2.0\HtmlAgilityPack.dll"
-$web = New-Object 'HtmlAgilityPack.HtmlWeb'
-$doc = $web.Load($url)
+    # Obtener el contenido HTML de la URL
+    $html = Invoke-WebRequest -Uri $url
 
-# Extraer la información de los productos
+    # Crear un nuevo objeto HTMLFile
+    $doc = New-Object -ComObject HTMLFile
 
-$products = $doc.DocumentNode.SelectNodes("//div[contains(@class, 's-result-item') and @data-asin]")
-if ($products -eq $null) {
-    Write-Error "No se encontraron productos en la página."
-    exit 1
-}
+    # Escribir el contenido HTML en el objeto HTMLFile
+    $doc.IHTMLDocument2_write($html.Content)
 
-$totalProducts = $products.Count
-Write-Output "Total de productos encontrados en la página: $totalProducts"
+    # Obtener los nodos que coinciden con el criterio especificado
+    $nodes = $doc.getElementsByTagName("div") | Where-Object { $_.className -eq "sg-col-inner" }
 
-# Seleccionar los últimos 10 productos
-$last10Products = $products | Select-Object -Last 10
+    # Registrar el número de nodos encontrados
+    Write-Host "Se encontraron $($nodes.Count) nodos"
 
-# Filtrar y devolver los productos
-$result = @()
-foreach ($product in $last10Products) {
-    $nameNode = $product.SelectSingleNode(".//span[@class='a-size-medium a-color-base a-text-normal']")
-    $priceNode = $product.SelectSingleNode(".//span[@class='a-price-whole']")
-    
-    if ($nameNode -ne $null -and $priceNode -ne $null) {
-        # Obtener el XPath de los nodos
-        $nameXPath = $nameNode.XPath
-        $priceXPath = $priceNode.XPath
-        
-        $result += [PSCustomObject]@{
-            Name = $nameNode.InnerText
-            Price = $priceNode.InnerText
-            NameXPath = $nameXPath
-            PriceXPath = $priceXPath
-            UrlImage = $product.SelectSingleNode(".//img").Attributes["src"].Value
+    # Crear un array para almacenar los productos
+    $products = @()
+
+    # Recorrer cada nodo
+    foreach ($node in $nodes) {
+        # Crear un nuevo objeto PSObject
+        $product = New-Object PSObject
+
+        # Agregar la propiedad "Name" al objeto PSObject
+        $NameNode = $node.getElementsByTagName("h2") | Where-Object { $_.className -eq "a-size-mini a-spacing-none a-color-base s-line-clamp-2" }
+        if ($NameNode) {
+            $product | Add-Member -MemberType NoteProperty -Name "Name" -Value ($NameNode.innerText -join ", ")
+        }
+
+        # Agregar la propiedad "Price" al objeto PSObject
+        $priceNode = $node.getElementsByTagName("span") | Where-Object { $_.className -eq "a-offscreen" }
+        if ($priceNode) {
+            $product | Add-Member -MemberType NoteProperty -Name "Price" -Value ($priceNode.innerText -join ", ")
+        }
+
+        # Agregar la propiedad "ImageURL" al objeto PSObject
+        $imgNode = $node.getElementsByTagName("img") | Where-Object { $_.className -eq "s-image s-image-optimized-rendering" }
+        if ($imgNode) {
+            $product | Add-Member -MemberType NoteProperty -Name "ImageURL" -Value $imgNode.src
+        }
+
+        # Solo agregar el producto si tiene nombre, precio e imagen
+        if ($product.Name -and $product.Price -and $product.ImageURL) {
+            # Agregar el objeto PSObject al array de productos
+            $products += $product
         }
     }
-}
 
-$result | ConvertTo-Json
+    # Tomar los últimos 10 productos
+    $last10Products = $products | Select-Object -Last 10
+
+    # Registrar el número de productos encontrados
+    Write-Host "Se obtenieron los ultimos  $($last10Products.Count) productos"
+
+    # Convertir el array de los últimos 10 productos a JSON
+    $productsJson = $last10Products | ConvertTo-Json
+
+    # Registrar el fin del proceso de scraping
+    Write-Host "El proceso de scraping ha finalizado con éxito"
+
+    # Devolver el JSON de los últimos 10 productos
+    return $productsJson
+} catch {
+    # Registrar el error ocurrido
+    Write-Host "Se produjo un error durante el proceso de scraping: $($_.Exception.Message)"
+}

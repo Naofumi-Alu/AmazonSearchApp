@@ -1,0 +1,364 @@
+2024-06-19 20:28:38,760:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-19 20:33:07,287:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-19 20:37:56,907:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 15:13:03,194:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 15:43:31,518:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 15:43:33,936:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 15:50:36,693:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 15:50:38,966:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:15:16,950:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:15:20,929:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:18:20,765:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:18:23,397:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:19:50,800:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:19:54,859:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:22:37,238:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:22:39,558:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:23:54,975:ERROR:Unexpected Error in fetch_products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:23:57,274:ERROR:Error in get_Products: 'WebDriver' object has no attribute 'find_element_by_id'
+2024-06-20 16:38:22,369:ERROR:WebDriver Error in fetch_products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF75CF03E32+31618]
+	(No symbol) [0x00007FF75CE7B099]
+	(No symbol) [0x00007FF75CD3888A]
+	(No symbol) [0x00007FF75CD88524]
+	(No symbol) [0x00007FF75CD8862C]
+	(No symbol) [0x00007FF75CDCF787]
+	(No symbol) [0x00007FF75CDAD14F]
+	(No symbol) [0x00007FF75CDCCA80]
+	(No symbol) [0x00007FF75CDACEB3]
+	(No symbol) [0x00007FF75CD7A46B]
+	(No symbol) [0x00007FF75CD7B001]
+	GetHandleVerifier [0x00007FF75D209FFD+3202381]
+	GetHandleVerifier [0x00007FF75D256A1D+3516269]
+	GetHandleVerifier [0x00007FF75D24C490+3473888]
+	GetHandleVerifier [0x00007FF75CFB5D36+760454]
+	(No symbol) [0x00007FF75CE86B3F]
+	(No symbol) [0x00007FF75CE81CD4]
+	(No symbol) [0x00007FF75CE81E62]
+	(No symbol) [0x00007FF75CE7120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:38:24,722:ERROR:Error in get_Products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF75CF03E32+31618]
+	(No symbol) [0x00007FF75CE7B099]
+	(No symbol) [0x00007FF75CD3888A]
+	(No symbol) [0x00007FF75CD88524]
+	(No symbol) [0x00007FF75CD8862C]
+	(No symbol) [0x00007FF75CDCF787]
+	(No symbol) [0x00007FF75CDAD14F]
+	(No symbol) [0x00007FF75CDCCA80]
+	(No symbol) [0x00007FF75CDACEB3]
+	(No symbol) [0x00007FF75CD7A46B]
+	(No symbol) [0x00007FF75CD7B001]
+	GetHandleVerifier [0x00007FF75D209FFD+3202381]
+	GetHandleVerifier [0x00007FF75D256A1D+3516269]
+	GetHandleVerifier [0x00007FF75D24C490+3473888]
+	GetHandleVerifier [0x00007FF75CFB5D36+760454]
+	(No symbol) [0x00007FF75CE86B3F]
+	(No symbol) [0x00007FF75CE81CD4]
+	(No symbol) [0x00007FF75CE81E62]
+	(No symbol) [0x00007FF75CE7120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:40:08,606:ERROR:Unexpected Error in fetch_products: WebDriver.implicitly_wait() takes 2 positional arguments but 3 were given
+2024-06-20 16:40:11,171:ERROR:Error in get_Products: WebDriver.implicitly_wait() takes 2 positional arguments but 3 were given
+2024-06-20 16:45:02,938:ERROR:Unexpected Error in fetch_products: 'module' object is not callable
+2024-06-20 16:45:05,901:ERROR:Error in get_Products: 'module' object is not callable
+2024-06-20 16:50:05,667:ERROR:WebDriver Error in fetch_products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:50:08,149:ERROR:Error in get_Products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:51:08,424:ERROR:WebDriver Error in fetch_products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66FA28524]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:51:12,626:ERROR:Error in get_Products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66FA28524]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:53:17,147:ERROR:WebDriver Error in fetch_products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:53:19,712:ERROR:Error in get_Products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:54:41,236:ERROR:WebDriver Error in fetch_products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:54:44,543:ERROR:Error in get_Products: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//html/body/div[1]/header/div/div[1]/div[2]/div/form/div[3]/div/span/input[@value='Go' id='nav-search-submit-button']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.63); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66F9DE6BE]
+	(No symbol) [0x00007FF66F9E1011]
+	(No symbol) [0x00007FF66F9E10B0]
+	(No symbol) [0x00007FF66FA2805C]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:55:50,000:ERROR:WebDriver Error in fetch_products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66FA28524]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:55:52,958:ERROR:Error in get_Products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF66FBA3E32+31618]
+	(No symbol) [0x00007FF66FB1B099]
+	(No symbol) [0x00007FF66F9D888A]
+	(No symbol) [0x00007FF66FA28524]
+	(No symbol) [0x00007FF66FA2862C]
+	(No symbol) [0x00007FF66FA6F787]
+	(No symbol) [0x00007FF66FA4D14F]
+	(No symbol) [0x00007FF66FA6CA80]
+	(No symbol) [0x00007FF66FA4CEB3]
+	(No symbol) [0x00007FF66FA1A46B]
+	(No symbol) [0x00007FF66FA1B001]
+	GetHandleVerifier [0x00007FF66FEA9FFD+3202381]
+	GetHandleVerifier [0x00007FF66FEF6A1D+3516269]
+	GetHandleVerifier [0x00007FF66FEEC490+3473888]
+	GetHandleVerifier [0x00007FF66FC55D36+760454]
+	(No symbol) [0x00007FF66FB26B3F]
+	(No symbol) [0x00007FF66FB21CD4]
+	(No symbol) [0x00007FF66FB21E62]
+	(No symbol) [0x00007FF66FB1120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-20 16:57:52,236:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 16:57:54,722:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:00:16,496:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:00:19,200:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:10:32,809:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:10:35,410:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:19:56,010:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:19:58,667:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:22:55,049:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:22:57,394:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:23:46,077:ERROR:Unexpected Error in fetch_products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+
+2024-06-20 17:23:48,468:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
+

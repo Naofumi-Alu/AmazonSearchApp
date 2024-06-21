@@ -1,4 +1,6 @@
 import pyodbc
+import os
+import logging
 
 
 class dataBase:
@@ -37,22 +39,61 @@ class dataBase:
         rows = cursor.fetchall()
         return rows
 
-# Example usage
+class logs:
+    
+    # Crear el directorio de logs si no existe
+    log_dir = 'logs'
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
 
-if __name__ == '__main__':
-    db_file = "DRIVER={SQL Server};SERVER=server_name;DATABASE=database_name;UID=username;PWD=password"
-    create_table_sql = """
-        CREATE TABLE IF NOT EXISTS products (
-            id INT PRIMARY KEY IDENTITY(1,1),
-            title NVARCHAR(MAX) NOT NULL,
-            price NVARCHAR(MAX) NOT NULL,
-            url NVARCHAR(MAX) NOT NULL
-        );
-    """
+    logging.basicConfig(
+        filename=os.path.join(log_dir, 'app.log'), 
+        level=logging.ERROR,
+        format='%(asctime)s:%(levelname)s:%(message)s'
+    )
 
-    conn = dataBase.create_connection(db_file)
-    if conn is not None:
-        dataBase.create_table(conn, create_table_sql)
-        conn.close()
-    else:
-        print("Error! cannot create the database connection.")
+    def log_error(message):
+        """
+        Registra un mensaje de error en el archivo de log.
+        """
+        logging.error(message)
+
+    def validate_username(username):
+        """
+        Valida que el nombre de usuario no esté vacío y cumpla con ciertos criterios.
+        """
+        if not username:
+            raise ValueError("El nombre de usuario no puede estar vacío.")
+        # Aquí puedes agregar más validaciones si es necesario
+        return True
+
+    def transform_product_data(product):
+        """
+        Transforma los datos del producto en un formato deseado.
+        """
+        return {
+            'Name': product.get('Name', 'N/A'),
+            'Price': product.get('Price', 'N/A'),
+            'Name': product.get('Name', 'N/A'),
+            'UrlImage': product.get('UrlImage', ''),
+        }
+    def format_product_display(character):
+        """
+        Formatea los datos del personaje para su visualización.
+        """
+        return f"Nombre: {character['name']}\nEstatus: {character['status']}\nEspecie: {character['species']}"
+
+    # Ejemplo de uso de funciones utilitarias
+    if __name__ == "__main__":
+        try:
+            # Simulando una validación de nombre de usuario
+            validate_username("admin")
+        except ValueError as ve:
+            log_error(f"Validation Error: {ve}")
+        except Exception as e:
+            log_error(f"Unexpected Error: {e}")
+        else:
+            print("Nombre de usuario válido.")
+        finally:
+            print("Proceso de validación completado.")
+        

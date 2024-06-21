@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import Toplevel, messagebox
 from PIL import Image, ImageTk
-import requests
 from src.AutomateScraper import AutomateScraper
 import os
+import sys
 
 class MainScreen:
     def __init__(self, root):
@@ -16,29 +16,34 @@ class MainScreen:
     def create_main_screen(self):
         self.main_frame = tk.Frame(self.root)
         self.main_frame.pack()
-
-        #Get the input text enter in texbox and storage in search_termvariable
-        self.search_term = tk.StringVar()
-        self.search_term_entry = tk.Entry(self.main_frame, textvariable=self.search_term)
-        self.search_term_entry.pack(pady=10)
+        
+        #Create a label to display the search term
+        self.search_label = tk.Label(self.main_frame, text="Search products:")
+        #create a textbox to enter the search term
+        self.search_entry = tk.Entry(self.main_frame)
+        self.search_entry.pack()
         
         #Create a button to search the products
-        self.search_button = tk.Button(self.main_frame, text="Search", command=self.get_Products(self.search_term))
+        self.search_button = tk.Button(self.main_frame, text="Search prodcts", command=self.get_ProductsFunc)
         self.search_button.pack(pady=10)
-        
+    
         #Create a listbox to display the products
         self.product_list = tk.Listbox(self.main_frame)
         self.product_list.pack(pady=10)
         self.product_list.bind("<<ListboxSelect>>", self.display_product)
         
 
-    def get_Products(self, textvariable):
+    def get_ProductsFunc(self):
+        search_term = self.search_entry.get()
+        if not search_term:
+            messagebox.showwarning("Warning", "Please enter a search term")
+            return
         try:
-            products = AutomateScraper.get_Products(textvariable)
-            products = [self.transform_product_data(product) for product in products]
-            self.products = products
-            self.product_list.delete(0, tk.END)
+            #wait that the user enter the search term 
+            self.products = AutomateScraper.get_Products(search_term)
             
+            # Insert the products in the listbox
+            self.product_list.delete(0, tk.END)
             
             for product in self.products:
                 self.product_list.insert(tk.END, product['Name'])
@@ -46,14 +51,16 @@ class MainScreen:
         # Manejar excepciones específicas si falla el scraping de la  función get_Products
         
         except Exception as e:
-            print(f"Error fetching products: {e}")
-            messagebox.showerror("Error", f"Failed to fetch products: {e}")
+            print(f"Error fetching products: {e} at line {sys.exc_info()[-1].tb_lineno}")
+            messagebox.showerror("Error", f"Failed to fetch products: {e} at line {sys.exc_info()[-1].tb_lineno}")
+           
+           
         finally:
             print("Fetching products completed")    
             
         
 
-    def display_product(self, event):
+    def display_product(self):
         if not self.product_list.curselection():
             return  # No hay selección, salir de la función
 
@@ -63,9 +70,9 @@ class MainScreen:
         try:
             print(f"Fetching image from: {product['UrlImage']}") 
             
-            image_data = AutomateScraper.fetch_product_image(product['UrlImage'])
+            image_data = product['UrlImage']
             
-            print(f"UrlImage: {image_data[:20]} ...")
+            print(f"UrlImage: {image_data} ...")
 
             # Guardar la imagen localmente
             image_path = f"assets/images/{product['name'].replace(' ', '_')}.png"

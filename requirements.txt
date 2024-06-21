@@ -1,7 +1,6 @@
 Selenium
-Pillow
 pyinstaller
 pyodbc
 pandas
 openpyxl
-sqlite3
+Pillow
