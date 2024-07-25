@@ -1,3 +1,4 @@
+# Definir la URL de origen
 param (
     [string] $url
 )
@@ -20,8 +21,10 @@ try {
     # Registrar el número de nodos encontrados
     Write-Host "Se encontraron $($nodes.Count) nodos"
 
-    # Crear un array para almacenar los productos
-    $products = @()
+    # Crear un array para almacenar los productos y otro para los no capturados
+    $allProducts = @()
+    $capturedProducts = @()
+    $missedProducts = @()
 
     # Recorrer cada nodo
     foreach ($node in $nodes) {
@@ -50,7 +53,7 @@ try {
             $popoverTrigger.fireEvent("onmouseover")
 
             #Esperar un segundo para que se cargue el popover
-            Start-Sleep -Seconds 1
+            #Start-Sleep -Seconds 1
 
             #Acceder al contenido que se muestra en el popover
             $rateNode = $node.getElementsByTagName("span") | Where-Object { $_.className -eq "a-icon-alt" }
@@ -59,34 +62,58 @@ try {
             }
         }
 
-        # Solo agregar el producto si tiene nombre, precio e rate
-        if ($product.Name -and $product.Price -and $product.Rate) {
-            # Agregar el objeto PSObject al array de productos
-            $products += $product
-        }
+        # Agregar el producto a la lista completa
+        $allProducts += $product
 
+        # Verificar si el producto tiene nombre, precio y rate
+        if ($product.Name -and $product.Price -and $product.Rate) {
+            # Agregar el objeto PSObject al array de productos capturados
+            $capturedProducts += $product
+        } else {
+            # Agregar al array de productos no capturados
+            $missedProducts += $product
+        }
     }
 
-    # Tomar todos los productos de la primer pagina
-    $currentProducts = $products
-
     # Registrar el número de productos encontrados
-    Write-Host "Se obtuvieron $($currentProducts.Count) productos"
+    Write-Host "Se obtuvieron $($capturedProducts.Count) productos"
 
     try {
-        # Convertir los productos a formato JSON
-        $productsJson = $currentProducts | ConvertTo-Json
+        # Convertir los productos totales, los capturados y los no capturados a formato JSON
+        $allProductsJson = $allProducts | ConvertTo-Json
+        $capturedProductsJson = $capturedProducts | ConvertTo-Json
+        $missedProductsJson = $missedProducts | ConvertTo-Json
+
+        #Crea el directorio ResultScraping si no existe
+        if (-not (Test-Path "ResultScraping")) {
+            New-Item -ItemType Directory -Path "ResultScraping"
+        }
+
+        
+        # Guardar los resultados en archivos JSON with date and time
+        $date = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+        $allProductsJson | Out-File -FilePath "ResultScraping/allProducts_$date.json"
+        $capturedProductsJson | Out-File -FilePath "ResultScraping/capturedProducts_$date.json"
+        $missedProductsJson | Out-File -FilePath "ResultScraping/missedProducts_$date.json"
     } catch {
         # Registrar el error ocurrido al convertir a JSON
         Write-Host "Se produjo un error al convertir los productos a JSON: $($_.Exception.Message)"
     }
 
+    #Imprime las variables de salida
+    Write-Host "allProductsJson: $allProductsJson"
+    Write-Host "capturedProductsJson: $capturedProductsJson"
+    Write-Host "missedProductsJson: $missedProductsJson"
+
     # Registrar el fin del proceso de scraping
     Write-Host "El proceso de scraping ha finalizado con éxito"
 
-    # Devolver el JSON de los últimos 10 productos
-    return $productsJson
-    # Capturar en una variable y Manejar cualquier error que ocurra durante el proceso de scraping
+    # Devolver los JSON de los productos capturados y los no capturados
+    return @{
+        CapturedProducts = $capturedProductsJson
+        MissedProducts = $missedProductsJson
+    }
+
 } catch {
     # Registrar el error ocurrido durante el proceso de scraping
     Write-Host "Se produjo un error durante el proceso de scraping: $($_.Exception.Message)"
