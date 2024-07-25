@@ -1,7 +1,10 @@
-# Definir la URL de origen
+
+# Definir la URL de origen y el nombre del producto
 param (
-    [string] $url
+    [string] $url,
+    [string] $productName
 )
+
 
 try {
     Write-Host "Iniciando el proceso de scraping en $url"
@@ -14,8 +17,7 @@ try {
     $doc.IHTMLDocument2_write($html.Content)
 
     # Seleccionar nodos directamente
-    # Dependiendo dle producto puede cambiar el nombre de la clase
-    $nameNodes = $doc.getElementsByTagName("span") | Where-Object { $_.className -eq "a-size-medium a-color-base a-text-normal" }
+    $nameNodes = $doc.getElementsByTagName("h2") | Where-Object { $_.className -eq "a-size-mini a-spacing-none a-color-base s-line-clamp-2" -or $_.className -eq "a-size-mini a-spacing-none a-color-base s-line-clamp-4" }
     $priceNodes = $doc.getElementsByTagName("span") | Where-Object { $_.className -eq "a-offscreen" }
     $rateNodes = $doc.getElementsByTagName("span") | Where-Object { $_.className -eq "a-icon-alt" }
 
@@ -60,8 +62,13 @@ try {
         }
     }
 
+    # Registrar el número de productos totales
+    Write-Host "Se obtuvieron $($allProducts.Count) productos"
     # Registrar el número de productos encontrados
     Write-Host "Se obtuvieron $($capturedProducts.Count) productos"
+    # Registrar el número de productos no capturados
+    Write-Host "Se obtuvieron $($missedProducts.Count) productos no capturados"
+
 
     try {
         # Convertir los productos totales, los capturados y los no capturados a formato JSON
@@ -82,6 +89,8 @@ try {
     } catch {
         # Registrar el error ocurrido al convertir a JSON
         Write-Host "Se produjo un error al convertir los productos a JSON: $($_.Exception.Message)"
+        # Registra la linea donde se produjo el error
+        Write-Host "Error en la linea: $($_.InvocationInfo.ScriptLineNumber)"
     }
 
     # Imprimir las variables de salida
