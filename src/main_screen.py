@@ -51,7 +51,7 @@ class MainScreen:
         # Manejar excepciones específicas si falla el scraping de la  función get_Products
         
         except Exception as e:
-            print(f"Error fetching products: {e} at line {sys.exc_info()[-1].tb_lineno}")
+            print(f"Error fetching products in AutomateScraper Module: {e} at line {sys.exc_info()[-1].tb_lineno}")
             messagebox.showerror("Error", f"Failed to fetch products: {e} at line {sys.exc_info()[-1].tb_lineno}")
            
            

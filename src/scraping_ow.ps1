@@ -1,10 +1,8 @@
-# Definir la URL de origen
 param (
     [string] $url
 )
 
 try {
-    # Registrar el inicio del proceso de scraping
     Write-Host "Iniciando el proceso de scraping en $url"
 
     # Obtener el contenido HTML de la URL
@@ -31,39 +29,53 @@ try {
         $product = New-Object PSObject
 
         # Agregar la propiedad "Name" al objeto PSObject
-        $NameNode = $node.getElementsByTagName("h2") | Where-Object { $_.className -eq "a-size-mini a-spacing-none a-color-base s-line-clamp-2" }
+        $NameNode = $node.getElementsByTagName("span") | Where-Object { $_.className -eq "a-size-medium a-color-base a-text-normal" }
         if ($NameNode) {
             $product | Add-Member -MemberType NoteProperty -Name "Name" -Value ($NameNode.innerText -join ", ")
         }
-
+        
         # Agregar la propiedad "Price" al objeto PSObject
         $priceNode = $node.getElementsByTagName("span") | Where-Object { $_.className -eq "a-offscreen" }
         if ($priceNode) {
             $product | Add-Member -MemberType NoteProperty -Name "Price" -Value ($priceNode.innerText -join ", ")
         }
 
-        # Agregar la propiedad "ImageURL" al objeto PSObject
-        $imgNode = $node.getElementsByTagName("img") | Where-Object { $_.className -eq "s-image s-image-optimized-rendering" }
-        if ($imgNode) {
-            $product | Add-Member -MemberType NoteProperty -Name "ImageURL" -Value $imgNode.src
+        # Encontrar el elemento que activa el popover
+        $popoverTrigger = $node.getElementsByTagName("a") | Where-Object { $_.className -eq "a-popover-trigger a-declarative" }
+
+        # Si se encuentra el elemento que activa el popover
+        if ($popoverTrigger) {
+            Write-Host "Activando el popover para el producto: $($product.Name)"
+            # Ejecutar el evento "onmouseover" para activar el popover
+            $popoverTrigger.fireEvent("onmouseover")
+
+            #Esperar un segundo para que se cargue el popover
+            Start-Sleep -Seconds 1
+
+            #Acceder al contenido que se muestra en el popover
+            $rateNode = $node.getElementsByTagName("span") | Where-Object { $_.className -eq "a-icon-alt" }
+            if ($rateNode) {
+                $product | Add-Member -MemberType NoteProperty -Name "Rate" -Value ($rateNode.innerText -join ", ")
+            }
         }
 
-        # Solo agregar el producto si tiene nombre, precio e imagen
-        if ($product.Name -and $product.Price -and $product.ImageURL) {
+        # Solo agregar el producto si tiene nombre, precio e rate
+        if ($product.Name -and $product.Price -and $product.Rate) {
             # Agregar el objeto PSObject al array de productos
             $products += $product
         }
+
     }
 
-    # Tomar los últimos 10 productos
-    $last10Products = $products | Select-Object -Last 10
+    # Tomar todos los productos de la primer pagina
+    $currentProducts = $products
 
     # Registrar el número de productos encontrados
-    Write-Host "Se obtenieron los ultimos  $($last10Products.Count) productos"
+    Write-Host "Se obtuvieron $($currentProducts.Count) productos"
 
     try {
         # Convertir los productos a formato JSON
-        $productsJson = $last10Products | ConvertTo-Json
+        $productsJson = $currentProducts | ConvertTo-Json
     } catch {
         # Registrar el error ocurrido al convertir a JSON
         Write-Host "Se produjo un error al convertir los productos a JSON: $($_.Exception.Message)"
@@ -82,5 +94,4 @@ try {
     $error = $_.Exception.Message
     # Devolver un mensaje de error
     return "Se produjo un error durante el proceso de scraping: $($_.Exception.Message)"
-
 }

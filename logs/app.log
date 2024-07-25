@@ -362,3 +362,161 @@ Stacktrace:
 
 2024-06-20 17:23:48,468:ERROR:Error in get_Products: Error executing PowerShell script: El argumento 'scraper.ps1' para el par metro -File no existe. Proporcione la ruta de acceso a un archivo '.ps1' existente como argumento para el par metro -File.
 
+2024-06-21 00:53:59,295:ERROR:Error in get_Products: object of type 'CompletedProcess' has no len()
+2024-06-21 00:55:36,301:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 00:55:38,482:ERROR:Error in get_Products: object of type 'NoneType' has no len()
+2024-06-21 01:02:24,301:ERROR:Unexpected Error in fetch_products: 'utf-8' codec can't decode byte 0xf8 in position 1826: invalid start byte
+2024-06-21 01:02:26,726:ERROR:Error in get_Products: 'utf-8' codec can't decode byte 0xf8 in position 1826: invalid start byte
+2024-06-21 01:05:22,333:ERROR:Unexpected Error in fetch_products: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:05:24,678:ERROR:Error in get_Products: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:06:58,309:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:07:00,493:ERROR:Error in get_Products: object of type 'NoneType' has no len()
+2024-06-21 01:08:08,098:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:08:10,262:ERROR:Error in get_Products: object of type 'NoneType' has no len()
+2024-06-21 01:08:57,266:ERROR:Error in get_Products: object of type 'CompletedProcess' has no len()
+2024-06-21 01:10:27,818:ERROR:Error in run_powershell_script: 'utf-8' codec can't decode byte 0xf8 in position 1171: invalid start byte
+2024-06-21 01:10:30,211:ERROR:Error in get_Products: object of type 'NoneType' has no len()
+2024-06-21 01:12:59,586:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:13:03,920:ERROR:Error in get_Products: object of type 'NoneType' has no len()
+2024-06-21 01:14:11,730:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:15:49,017:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:15:49,017:ERROR:Unexpected Error in fetch_products: Error fetching products
+2024-06-21 01:15:54,575:ERROR:Error in get_Products: Error fetching products
+2024-06-21 01:16:38,919:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:16:38,920:ERROR:Unexpected Error in fetch_products: Error fetching products from PowerShell script
+2024-06-21 01:16:41,240:ERROR:Error in get_Products: Error fetching products from PowerShell script
+2024-06-21 01:18:40,960:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:18:40,961:ERROR:Unexpected Error in fetch_products: Error fetching products from PowerShell script
+2024-06-21 01:18:43,922:ERROR:Error in get_Products: Error fetching products from PowerShell script
+2024-06-21 01:22:16,095:ERROR:Error in run_powershell_script: 'utf-8' codec can't decode byte 0xf8 in position 473: invalid start byte
+2024-06-21 01:22:16,096:ERROR:Unexpected Error in fetch_products: Failed to fetch products from PowerShell script
+2024-06-21 01:22:18,443:ERROR:Error in get_Products: Failed to fetch products from PowerShell script
+2024-06-21 01:25:04,980:ERROR:Error in run_powershell_script: Expecting value: line 1 column 1 (char 0)
+2024-06-21 01:25:04,982:ERROR:Unexpected Error in fetch_products: Failed to fetch products from PowerShell script
+2024-06-21 01:25:09,258:ERROR:Error in get_Products: Failed to fetch products from PowerShell script
+2024-06-21 01:28:08,221:ERROR:WebDriver Error in fetch_products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E45D3E32+31618]
+	(No symbol) [0x00007FF7E454B099]
+	(No symbol) [0x00007FF7E440888A]
+	(No symbol) [0x00007FF7E4458524]
+	(No symbol) [0x00007FF7E445862C]
+	(No symbol) [0x00007FF7E449F787]
+	(No symbol) [0x00007FF7E447D14F]
+	(No symbol) [0x00007FF7E449CA80]
+	(No symbol) [0x00007FF7E447CEB3]
+	(No symbol) [0x00007FF7E444A46B]
+	(No symbol) [0x00007FF7E444B001]
+	GetHandleVerifier [0x00007FF7E48D9FFD+3202381]
+	GetHandleVerifier [0x00007FF7E4926A1D+3516269]
+	GetHandleVerifier [0x00007FF7E491C490+3473888]
+	GetHandleVerifier [0x00007FF7E4685D36+760454]
+	(No symbol) [0x00007FF7E4556B3F]
+	(No symbol) [0x00007FF7E4551CD4]
+	(No symbol) [0x00007FF7E4551E62]
+	(No symbol) [0x00007FF7E454120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-21 01:28:08,221:ERROR:Error in get_Products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E45D3E32+31618]
+	(No symbol) [0x00007FF7E454B099]
+	(No symbol) [0x00007FF7E440888A]
+	(No symbol) [0x00007FF7E4458524]
+	(No symbol) [0x00007FF7E445862C]
+	(No symbol) [0x00007FF7E449F787]
+	(No symbol) [0x00007FF7E447D14F]
+	(No symbol) [0x00007FF7E449CA80]
+	(No symbol) [0x00007FF7E447CEB3]
+	(No symbol) [0x00007FF7E444A46B]
+	(No symbol) [0x00007FF7E444B001]
+	GetHandleVerifier [0x00007FF7E48D9FFD+3202381]
+	GetHandleVerifier [0x00007FF7E4926A1D+3516269]
+	GetHandleVerifier [0x00007FF7E491C490+3473888]
+	GetHandleVerifier [0x00007FF7E4685D36+760454]
+	(No symbol) [0x00007FF7E4556B3F]
+	(No symbol) [0x00007FF7E4551CD4]
+	(No symbol) [0x00007FF7E4551E62]
+	(No symbol) [0x00007FF7E454120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-21 01:33:40,136:ERROR:WebDriver Error in fetch_products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E45D3E32+31618]
+	(No symbol) [0x00007FF7E454B099]
+	(No symbol) [0x00007FF7E440888A]
+	(No symbol) [0x00007FF7E4458524]
+	(No symbol) [0x00007FF7E445862C]
+	(No symbol) [0x00007FF7E449F787]
+	(No symbol) [0x00007FF7E447D14F]
+	(No symbol) [0x00007FF7E449CA80]
+	(No symbol) [0x00007FF7E447CEB3]
+	(No symbol) [0x00007FF7E444A46B]
+	(No symbol) [0x00007FF7E444B001]
+	GetHandleVerifier [0x00007FF7E48D9FFD+3202381]
+	GetHandleVerifier [0x00007FF7E4926A1D+3516269]
+	GetHandleVerifier [0x00007FF7E491C490+3473888]
+	GetHandleVerifier [0x00007FF7E4685D36+760454]
+	(No symbol) [0x00007FF7E4556B3F]
+	(No symbol) [0x00007FF7E4551CD4]
+	(No symbol) [0x00007FF7E4551E62]
+	(No symbol) [0x00007FF7E454120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-21 01:33:40,317:ERROR:Error in get_Products: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E45D3E32+31618]
+	(No symbol) [0x00007FF7E454B099]
+	(No symbol) [0x00007FF7E440888A]
+	(No symbol) [0x00007FF7E4458524]
+	(No symbol) [0x00007FF7E445862C]
+	(No symbol) [0x00007FF7E449F787]
+	(No symbol) [0x00007FF7E447D14F]
+	(No symbol) [0x00007FF7E449CA80]
+	(No symbol) [0x00007FF7E447CEB3]
+	(No symbol) [0x00007FF7E444A46B]
+	(No symbol) [0x00007FF7E444B001]
+	GetHandleVerifier [0x00007FF7E48D9FFD+3202381]
+	GetHandleVerifier [0x00007FF7E4926A1D+3516269]
+	GetHandleVerifier [0x00007FF7E491C490+3473888]
+	GetHandleVerifier [0x00007FF7E4685D36+760454]
+	(No symbol) [0x00007FF7E4556B3F]
+	(No symbol) [0x00007FF7E4551CD4]
+	(No symbol) [0x00007FF7E4551E62]
+	(No symbol) [0x00007FF7E454120F]
+	BaseThreadInitThunk [0x00007FFAC8C47344+20]
+	RtlUserThreadStart [0x00007FFACA31CC91+33]
+
+2024-06-21 01:34:10,584:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:34:13,185:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:35:11,391:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:35:15,573:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:35:40,234:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:35:42,928:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:37:57,069:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:37:59,493:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:39:26,848:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:39:29,984:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:41:07,241:ERROR:Unexpected Error in fetch_products: object of type 'Popen' has no len()
+2024-06-21 01:41:09,522:ERROR:Error in get_Products: object of type 'Popen' has no len()
+2024-06-21 01:42:19,841:ERROR:Unexpected Error in fetch_products: argument of type 'int' is not iterable
+2024-06-21 01:42:22,312:ERROR:Error in get_Products: argument of type 'int' is not iterable
+2024-06-21 01:44:08,909:ERROR:Error in run_powershell_script: 'utf-8' codec can't decode byte 0xf8 in position 1824: invalid start byte
+2024-06-21 01:48:37,918:ERROR:Error in run_powershell_script: 'utf-8' codec can't decode byte 0xf8 in position 3442: invalid start byte
+2024-06-21 01:48:37,918:ERROR:Unexpected Error in fetch_products: No products found
+2024-06-21 01:48:40,174:ERROR:Error in get_Products: No products found
+2024-06-21 02:00:30,856:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-06-21 02:00:33,428:ERROR:Error in get_Products: 'Popen' object is not iterable
+2024-06-21 08:21:16,193:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-06-21 08:21:19,787:ERROR:Error in get_Products: 'Popen' object is not iterable
+2024-07-24 17:07:53,389:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-07-24 17:07:56,758:ERROR:Error in get_Products: 'Popen' object is not iterable
+2024-07-24 17:32:39,502:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-07-24 17:32:42,874:ERROR:Error in get_Products: 'Popen' object is not iterable
+2024-07-24 17:51:39,141:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-07-24 17:51:44,204:ERROR:Error in get_Products: 'Popen' object is not iterable
+2024-07-24 17:55:17,203:ERROR:Unexpected Error in fetch_products: 'Popen' object is not iterable
+2024-07-24 17:55:20,712:ERROR:Error in get_Products: 'Popen' object is not iterable
