@@ -103,8 +103,8 @@ try {
 
     # Devolver los JSON de los productos capturados y los no capturados
     return @{
-        CapturedProducts = $capturedProductsJson
-        MissedProducts = $missedProductsJson
+        capturedProductsJson = $capturedProductsJson
+        missedProductsJson = $missedProductsJson
     }
 
 } catch {
