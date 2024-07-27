@@ -1,5 +1,8 @@
+param (
+    [string]$url
+)
 try {
-    $url = "%url%"
+    #$url = "%url%"
      Write-Host "Iniciando el proceso de scraping en $url"
  
      # Obtener el contenido HTML de la URL
@@ -50,7 +53,7 @@ try {
          if ($product.Name -and $product.Price -and $product.Rate) {
              # Agregar el objeto PSObject al array de productos capturados
              $capturedProducts += $product
-         } elseif ($product.Price -and $product.Rate) {
+        } else{
              # Agregar al array de productos no capturados
              $missedProducts += $product
          }
@@ -70,16 +73,21 @@ try {
          $capturedProductsJson = $capturedProducts | ConvertTo-Json
          $missedProductsJson = $missedProducts | ConvertTo-Json
  
-         # Crear el directorio ResultScraping si no existe
-         if (-not (Test-Path "ResultScraping")) {
-             New-Item -ItemType Directory -Path "ResultScraping"
-         }
- 
+        # Determinar la ruta del perfil del usuario
+        $userProfilePath = [Environment]::GetFolderPath("UserProfile")
+        $resultPath = Join-Path -Path $userProfilePath -ChildPath "ResultScraping"
+
+        # Crear el directorio ResultScraping si no existe
+        if (-not (Test-Path $resultPath)) {
+            New-Item -ItemType Directory -Path $resultPath
+        }
+
         # Guardar los resultados en archivos JSON con fecha y hora
-         $date = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
-         $allProductsJson | Out-File -FilePath "ResultScraping/allProducts_$date.json"
-         $capturedProductsJson | Out-File -FilePath "ResultScraping/capturedProducts_$date.json"
-         $missedProductsJson | Out-File -FilePath "ResultScraping/missedProducts_$date.json"
+        $date = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+        $allProductsJson | Out-File -FilePath (Join-Path -Path $resultPath -ChildPath "allProducts_$date.json")
+        $capturedProductsJson | Out-File -FilePath (Join-Path -Path $resultPath -ChildPath "capturedProducts_$date.json")
+        $missedProductsJson | Out-File -FilePath (Join-Path -Path $resultPath -ChildPath "missedProducts_$date.json")
+
      } catch {
          # Registrar el error ocurrido al convertir a JSON
          Write-Host "Se produjo un error al convertir los productos a JSON: $($_.Exception.Message)"
@@ -98,7 +106,6 @@ try {
      # Devolver los JSON de los productos capturados y los no capturados
      return @{
          CapturedProducts = $capturedProductsJson
-         #MissedProducts = $missedProductsJson
      }
  
  } catch {
